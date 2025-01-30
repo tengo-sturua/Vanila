@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="template.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+  <button class="pdf-btn">Download Pdf </button>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <ul class="navbar-links">
+        <a href="#" class="navbar-brand"><img src="../images/profile.png" alt="" width="50px"></a>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="resume-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="profile-image"></div>
+      <h3 data-key="name" contenteditable="true">Jon Doe</h3>
+      <p data-key="jobTitle" contenteditable="true">Computer Engineering Student</p>
+      <h4>Contact</h4>
+      <p data-key="phone" contenteditable="true">Phone: xxx-xxx-xxx</p>
+      <p data-key="email" contenteditable="true">Email: example@gmail.com</p>
+      <p data-key="github" contenteditable="true">GitHub: <a href="https://github.com/tengo-sturua">github.com</a></p>
+      <p data-key="linkedin" contenteditable="true">LinkedIn: <a href="https://www.linkedin.com/in/tengo-sturua-99a65b281/">linkedin.com</a></p>
+      <h4>Languages</h4>
+      <div class="languages" id="languages" data-key="languages" contenteditable="true">
+        <span>English (B2)</span><span>Georgian (Native)</span>
+      </div>
+      <button id="addLanguage">Add Language</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h2>About Me</h2>
+      <p class="editable" contenteditable="true" data-key="aboutMe">I am a self-taught developer with experience in various technologies.</p>
+
+      <h3>Education</h3>
+      <p data-key="education" contenteditable="true">Ilia State University | 2024 - 2028</p>
+
+      <h3>Work Experience</h3>
+      <ul id="work-experience" data-key="workExperience">
+        <li class="editable" contenteditable="true" data-placeholder="Add your experience here...">
+          Assisted in setting up and managing network devices and ensuring system reliability.
+        </li>
+        <li class="editable" contenteditable="true" data-placeholder="Add your experience here...">
+          Worked on small-scale web development projects using React and Node.js.
+        </li>
+      </ul>
+      <button id="addWork">Add Work Experience</button>
+
+      <h3>Certifications</h3>
+      <ul id="certifications" data-key="certifications">
+        <li contenteditable="true">Google IT Support Professional Certificate</li>
+        <li contenteditable="true">Introduction to Cybersecurity - Cisco Networking Academy</li>
+      </ul>
+      <button id="addCertification">Add Certification</button>
+
+      <!-- Skills -->
+      <h4>Skills</h4>
+      <div class="skills" id="skills" >
+        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+      </div>
+      <button id="addSkill">Add Skill</button>
+    </div>
+  </div>
+
+  <script src="template.js"></script>
+
+</body>
+</html>

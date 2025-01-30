@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume PDF Download</title>
+    <!-- Include jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Resume</h1>
+    <button onclick="generateResumePDF()">Download Resume as PDF</button>
+
+    <script>
+        // Initialize jsPDF
+        const { jsPDF } = window.jspdf;
+
+        function generateResumePDF() {
+            // Create a new jsPDF instance
+            const doc = new jsPDF();
+
+            // Add resume details
+            doc.setFontSize(22);
+            doc.text("John Doe", 20, 20); // Name
+            doc.setFontSize(16);
+            doc.text("Software Engineer", 20, 30); // Job Title
+
+            doc.setFontSize(12);
+            doc.text("Contact Information:", 20, 45);
+            doc.text("Email: john.doe@example.com", 20, 55);
+            doc.text("Phone: +123 456 7890", 20, 65);
+            doc.text("LinkedIn: linkedin.com/in/johndoe", 20, 75);
+
+            doc.text("Education:", 20, 90);
+            doc.text("Bachelor of Science in Computer Science", 20, 100);
+            doc.text("University of Example, 2018-2022", 20, 110);
+
+            doc.text("Experience:", 20, 125);
+            doc.text("Software Engineer at ABC Corp (2022-Present)", 20, 135);
+            doc.text("- Developed web applications using JavaScript and React.", 20, 145);
+            doc.text("- Collaborated with cross-functional teams to deliver projects.", 20, 155);
+
+            doc.text("Skills:", 20, 170);
+            doc.text("- JavaScript, React, Node.js", 20, 180);
+            doc.text("- HTML, CSS, Git", 20, 190);
+
+            // Save the PDF
+            doc.save("John_Doe_Resume.pdf");
+        }
+    </script>
+</body>
+</html>
